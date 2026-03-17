@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+    <title>AstralMarket | Стать продавцом</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        /* Дополнительные стили для страницы регистрации продавца */
+        .seller-register-page {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        .seller-container {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 40px 20px;
+        }
+
+        .seller-card {
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(20px);
+            border-radius: 50px;
+            padding: 50px;
+            max-width: 600px;
+            width: 100%;
+            box-shadow: var(--shadow);
+            border: 1px solid white;
+            animation: fadeIn 0.5s ease;
+        }
+
+        .seller-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .seller-icon {
+            font-size: 5rem;
+            color: #4f7df3;
+            background: rgba(79, 125, 243, 0.1);
+            padding: 20px;
+            border-radius: 50%;
+            margin-bottom: 20px;
+        }
+
+        .seller-header h2 {
+            font-size: 2.2rem;
+            color: #10324e;
+            margin-bottom: 10px;
+        }
+
+        .seller-header p {
+            color: #4a5f7a;
+            font-size: 1.1rem;
+        }
+
+        .seller-form {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+
+        .form-row {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .form-row .form-group {
+            flex: 1;
+            min-width: 200px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .form-group label {
+            font-weight: 600;
+            color: #1e3c72;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .form-group label i {
+            color: #4f7df3;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            padding: 14px 18px;
+            border: 2px solid #e0ecff;
+            border-radius: 30px;
+            font-size: 1rem;
+            transition: 0.2s;
+            background: white;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #4f7df3;
+            box-shadow: 0 0 0 4px rgba(79, 125, 243, 0.1);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        .checkbox-group {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin: 10px 0;
+        }
+
+        .checkbox-group input {
+            width: 20px;
+            height: 20px;
+            cursor: pointer;
+        }
+
+        .checkbox-group label {
+            font-size: 0.95rem;
+            color: #1e3c72;
+            cursor: pointer;
+        }
+
+        .checkbox-group a {
+            color: #4f7df3;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .checkbox-group a:hover {
+            text-decoration: underline;
+        }
+
+        .seller-submit-btn {
+            background: linear-gradient(135deg, #4f7df3, #1e3c72);
+            color: white;
+            border: none;
+            padding: 18px;
+            border-radius: 40px;
+            font-weight: 700;
+            font-size: 1.2rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            transition: 0.2s;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            margin-top: 20px;
+        }
+
+        .seller-submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(79, 125, 243, 0.3);
+        }
+
+        .seller-footer {
+            margin-top: 30px;
+            text-align: center;
+            color: #6b7f9c;
+            font-size: 0.95rem;
+        }
+
+        .seller-footer a {
+            color: #4f7df3;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .seller-footer a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            .seller-card {
+                padding: 30px 20px;
+            }
+
+            .form-row {
+                flex-direction: column;
+                gap: 15px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .seller-card {
+                padding: 30px 20px;
+            }
+
+            .seller-header h2 {
+                font-size: 1.8rem;
+            }
+
+            .seller-header p {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+
+<body class="seller-register-page">
+    <header>
+        <div class="container header-inner">
+            <div class="header-left">
+                <div class="logo">
+                    <a href="index.html">
+                        <img src="site-images/AstralMarketLogo.svg" height="35" alt="AstralMarket Logo">
+                    </a>
+                </div>
+            </div>
+
+            <div class="user-actions">
+                <a href="seller-register.html" class="seller-btn" title="Стать продавцом">
+                    <i class="fas fa-plus"></i>
+                </a>
+                <i class="fas fa-bell"></i>
+                <i class="fas fa-shopping-cart" id="cartIcon"></i>
+                <a href="login.html"><i class="fas fa-user-circle"></i></a>
+            </div>
+        </div>
+    </header>
+
+    <main class="seller-container">
+        <div class="seller-card">
+            <div class="seller-header">
+                <i class="fas fa-store seller-icon"></i>
+                <h2>Стать продавцом</h2>
+                <p>Начните продавать цифровые товары на AstralMarket</p>
+            </div>
+
+            <form id="sellerForm" class="seller-form">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="firstName">
+                            <i class="fas fa-user"></i>
+                            Имя
+                        </label>
+                        <input type="text" id="firstName" placeholder="Иван" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="lastName">
+                            <i class="fas fa-user"></i>
+                            Фамилия
+                        </label>
+                        <input type="text" id="lastName" placeholder="Иванов" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">
+                        <i class="fas fa-envelope"></i>
+                        Электронная почта
+                    </label>
+                    <input type="email" id="email" placeholder="seller@example.com" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="phone">
+                        <i class="fas fa-phone"></i>
+                        Номер телефона
+                    </label>
+                    <input type="tel" id="phone" placeholder="+7 (999) 123-45-67" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="storeName">
+                        <i class="fas fa-store-alt"></i>
+                        Название магазина
+                    </label>
+                    <input type="text" id="storeName" placeholder="GameStore" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="category">
+                        <i class="fas fa-tag"></i>
+                        Основная категория товаров
+                    </label>
+                    <select id="category" required>
+                        <option value="">Выберите категорию</option>
+                        <option value="games">Игры</option>
+                        <option value="steam">Steam</option>
+                        <option value="subscriptions">Подписки</option>
+                        <option value="accounts">Аккаунты</option>
+                        <option value="keys">Ключи</option>
+                        <option value="other">Другое</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="description">
+                        <i class="fas fa-align-left"></i>
+                        Описание магазина
+                    </label>
+                    <textarea id="description" placeholder="Расскажите о вашем магазине и товарах..."></textarea>
+                </div>
+
+                <div class="checkbox-group">
+                    <input type="checkbox" id="agreeTerms" required>
+                    <label for="agreeTerms">
+                        Я согласен с <a href="#">условиями использования</a> и <a href="#">политикой
+                            конфиденциальности</a>
+                    </label>
+                </div>
+
+                <div class="checkbox-group">
+                    <input type="checkbox" id="agreeSeller" required>
+                    <label for="agreeSeller">
+                        Я подтверждаю, что буду продавать только лицензионные товары
+                    </label>
+                </div>
+
+                <button type="submit" class="seller-submit-btn" id="sellerSubmitBtn">
+                    <i class="fas fa-rocket"></i>
+                    Отправить заявку
+                </button>
+            </form>
+
+            <div class="seller-footer">
+                <p>Уже есть аккаунт продавца? <a href="login.html">Войдите</a></p>
+            </div>
+        </div>
+    </main>
+
+    <!-- Мобильный нижний центр управления -->
+    <div class="mobile-bottom-nav" id="mobileBottomNav">
+        <a href="seller-register.html" class="nav-item" title="Стать продавцом">
+            <i class="fas fa-plus"></i>
+            <span>Продавать</span>
+        </a>
+        <a href="#" class="nav-item" id="mobileBellIcon">
+            <i class="fas fa-bell"></i>
+            <span>Уведомления</span>
+        </a>
+        <a href="#" class="nav-item" id="mobileCartIcon">
+            <i class="fas fa-shopping-cart"></i>
+            <span>Корзина</span>
+        </a>
+        <a href="login.html" class="nav-item">
+            <i class="fas fa-user-circle"></i>
+            <span>Профиль</span>
+        </a>
+    </div>
+
+    <!-- Контейнер для мобильных уведомлений -->
+    <div class="mobile-notification" id="mobileNotification">
+        <i class="fas" id="mobileNotificationIcon"></i>
+        <span id="mobileNotificationMessage"></span>
+        <button class="close-notification" id="closeMobileNotification">
+            <i class="fas fa-times"></i>
+        </button>
+    </div>
+
+    <!-- Модальное окно корзины для ПК -->
+    <div class="cart-overlay" id="cartOverlay"></div>
+    <div class="cart-modal" id="cartModal">
+        <div class="cart-header">
+            <h3><i class="fas fa-shopping-cart"></i> Корзина <span id="cartCount">0</span></h3>
+            <button class="close-cart" id="closeCartBtn"><i class="fas fa-times"></i></button>
+        </div>
+        <div class="cart-content" id="cartContent">
+            <!-- Товары будут загружаться через JavaScript -->
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>Итого:</span>
+                <span id="cartTotalPrice">0 ₽</span>
+            </div>
+            <button class="checkout-btn" id="checkoutBtn">Оформить заказ</button>
+        </div>
+    </div>
+
+    <!-- Мобильное полноэкранное меню корзины -->
+    <div class="mobile-cart-fullscreen" id="mobileCartFullscreen">
+        <div class="mobile-cart-header">
+            <h3><i class="fas fa-shopping-cart"></i> Корзина</h3>
+            <button class="close-mobile-cart" id="closeMobileCartBtn"><i class="fas fa-times"></i></button>
+        </div>
+        <div class="mobile-cart-content" id="mobileCartContent">
+            <!-- Товары будут загружаться через JavaScript -->
+        </div>
+        <div class="mobile-cart-footer">
+            <div class="mobile-cart-total">
+                <span>Итого:</span>
+                <span id="mobileCartTotalPrice">0 ₽</span>
+            </div>
+            <button class="mobile-checkout-btn" id="mobileCheckoutBtn">Оформить заказ</button>
+        </div>
+    </div>
+
+    <script src="js/main.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+    <title>AstralMarket | Вход в аккаунт</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body class="login-page">
+    <header>
+        <div class="container header-inner">
+            <div class="header-left">
+                <div class="logo">
+                    <a href="index.html">
+                        <img src="site-images/AstralMarketLogo.svg" height="35" alt="AstralMarket Logo">
+                    </a>
+                </div>
+            </div>
+
+            <div class="user-actions">
+                <a href="seller-register.html" class="seller-btn" title="Стать продавцом">
+                    <i class="fas fa-plus"></i>
+                </a>
+                <i class="fas fa-bell"></i>
+                <i class="fas fa-shopping-cart" id="cartIcon"></i>
+                <a href="login.html"><i class="fas fa-user-circle"></i></a>
+            </div>
+        </div>
+    </header>
+
+    <main class="login-container">
+        <div class="login-card">
+            <div class="login-header">
+                <i class="fas fa-user-circle login-icon"></i>
+                <h2>Вход в аккаунт</h2>
+                <p>Войдите, чтобы получить доступ к покупкам</p>
+            </div>
+
+            <form id="loginForm" class="login-form">
+                <div class="form-group">
+                    <label for="email">
+                        <i class="fas fa-envelope"></i>
+                        Электронная почта
+                    </label>
+                    <input type="email" id="email" name="email" placeholder="example@email.com" required>
+                </div>
+
+                <button type="submit" class="login-btn" id="getCodeBtn">
+                    <i class="fas fa-paper-plane"></i>
+                    Получить код
+                </button>
+            </form>
+
+            <div class="login-footer">
+                <p>Нажимая "Получить код", вы соглашаетесь с условиями использования</p>
+            </div>
+        </div>
+    </main>
+
+    <!-- Мобильный нижний центр управления -->
+    <div class="mobile-bottom-nav" id="mobileBottomNav">
+        <a href="seller-register.html" class="nav-item" title="Стать продавцом">
+            <i class="fas fa-plus"></i>
+            <span>Продавать</span>
+        </a>
+        <a href="#" class="nav-item" id="mobileBellIcon">
+            <i class="fas fa-bell"></i>
+            <span>Уведомления</span>
+        </a>
+        <a href="#" class="nav-item" id="mobileCartIcon">
+            <i class="fas fa-shopping-cart"></i>
+            <span>Корзина</span>
+        </a>
+        <a href="login.html" class="nav-item">
+            <i class="fas fa-user-circle"></i>
+            <span>Профиль</span>
+        </a>
+    </div>
+
+    <!-- Контейнер для мобильных уведомлений -->
+    <div class="mobile-notification" id="mobileNotification">
+        <i class="fas" id="mobileNotificationIcon"></i>
+        <span id="mobileNotificationMessage"></span>
+        <button class="close-notification" id="closeMobileNotification">
+            <i class="fas fa-times"></i>
+        </button>
+    </div>
+
+    <!-- Модальное окно корзины для ПК -->
+    <div class="cart-overlay" id="cartOverlay"></div>
+    <div class="cart-modal" id="cartModal">
+        <div class="cart-header">
+            <h3><i class="fas fa-shopping-cart"></i> Корзина <span id="cartCount">0</span></h3>
+            <button class="close-cart" id="closeCartBtn"><i class="fas fa-times"></i></button>
+        </div>
+        <div class="cart-content" id="cartContent">
+            <!-- Товары будут загружаться через JavaScript -->
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>Итого:</span>
+                <span id="cartTotalPrice">0 ₽</span>
+            </div>
+            <button class="checkout-btn" id="checkoutBtn">Оформить заказ</button>
+        </div>
+    </div>
+
+    <!-- Мобильное полноэкранное меню корзины -->
+    <div class="mobile-cart-fullscreen" id="mobileCartFullscreen">
+        <div class="mobile-cart-header">
+            <h3><i class="fas fa-shopping-cart"></i> Корзина</h3>
+            <button class="close-mobile-cart" id="closeMobileCartBtn"><i class="fas fa-times"></i></button>
+        </div>
+        <div class="mobile-cart-content" id="mobileCartContent">
+            <!-- Товары будут загружаться через JavaScript -->
+        </div>
+        <div class="mobile-cart-footer">
+            <div class="mobile-cart-total">
+                <span>Итого:</span>
+                <span id="mobileCartTotalPrice">0 ₽</span>
+            </div>
+            <button class="mobile-checkout-btn" id="mobileCheckoutBtn">Оформить заказ</button>
+        </div>
+    </div>
+
+    <script src="js/login.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>

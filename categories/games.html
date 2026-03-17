@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+    <title>AstralMarket | Игры</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+    <header>
+        <div class="container header-inner">
+            <div class="header-left">
+                <div class="logo">
+                    <a href="../index.html">
+                        <img src="../site-images/AstralMarketLogo.svg" height="35" alt="AstralMarket Logo">
+                    </a>
+                </div>
+            </div>
+
+            <div class="search-bar">
+                <input type="text" placeholder="Поиск игр, ключей, пополнений..." id="searchInput">
+                <button id="searchBtn"><i class="fas fa-search"></i> Найти</button>
+            </div>
+
+            <div class="user-actions">
+                <a href="../seller-register.html" class="seller-btn" title="Стать продавцом">
+                    <i class="fas fa-plus"></i>
+                </a>
+                <i class="fas fa-bell"></i>
+                <i class="fas fa-shopping-cart" id="cartIcon"></i>
+                <a href="../login.html"><i class="fas fa-user-circle"></i></a>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="back-home" onclick="window.location.href='../index.html'">
+            <i class="fas fa-arrow-left"></i> На главную
+        </div>
+
+        <div class="section-title-wrapper">
+            <h2 class="section-title" id="categoryTitle">Категория: Игры</h2>
+        </div>
+
+        <div class="product-grid" id="categoryProductsGrid"></div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <!-- Левая колонка - Способы оплаты -->
+                <div class="footer-column">
+                    <h4>Способы оплаты</h4>
+                    <div class="payment-methods">
+                        <svg class="payment-icon" focusable="false" aria-hidden="true" viewBox="0 0 32 32" width="32"
+                            height="32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M1 10C1 7.79086 2.8625 6 5.16 6H26.84C29.1375 6 31 7.79086 31 10V22C31 24.2091 29.1375 26 26.84 26H5.16C2.8625 26 1 24.2091 1 22V10Z"
+                                fill="#142266"></path>
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M6 20C6 19.4477 6.44772 19 7 19H10C10.5523 19 11 19.4477 11 20C11 20.5523 10.5523 21 10 21H7C6.44772 21 6 20.5523 6 20Z"
+                                fill="white"></path>
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M13 20C13 19.4477 13.4477 19 14 19H17C17.5523 19 18 19.4477 18 20C18 20.5523 17.5523 21 17 21H14C13.4477 21 13 20.5523 13 20Z"
+                                fill="white"></path>
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M20 20C20 19.4477 20.4477 19 21 19H24C24.5523 19 25 19.4477 25 20C25 20.5523 24.5523 21 24 21H21C20.4477 21 20 20.5523 20 20Z"
+                                fill="white"></path>
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M6 13C6 11.8954 6.89543 11 8 11H11C12.1046 11 13 11.8954 13 13C13 14.1046 12.1046 15 11 15H8C6.89543 15 6 14.1046 6 13Z"
+                                fill="#FFDA24"></path>
+                            <rect x="20" y="8" width="12" height="3" fill="#3355FF"></rect>
+                            <path
+                                d="M20 11H32C32 11.9319 32 12.3978 31.8478 12.7654C31.6448 13.2554 31.2554 13.6448 30.7654 13.8478C30.3978 14 29.9319 14 29 14H23C22.0681 14 21.6022 14 21.2346 13.8478C20.7446 13.6448 20.3552 13.2554 20.1522 12.7654C20 12.3978 20 11.9319 20 11Z"
+                                fill="#FF3333"></path>
+                        </svg>
+
+                        <svg class="payment-icon" focusable="false" aria-hidden="true" viewBox="0 0 32 32" width="32"
+                            height="32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M5 8.0957L8.39069 14.1563V17.8532L5.00397 23.9019L5 8.0957Z" fill="#5B57A2"></path>
+                            <path d="M18.0195 11.9515L21.1967 10.0041L27.6991 9.99805L18.0195 15.9278V11.9515Z"
+                                fill="#D90751"></path>
+                            <path d="M17.9998 8.05878L18.0178 16.0829L14.6191 13.9946V2L17.9998 8.05878Z"
+                                fill="#FAB718"></path>
+                            <path d="M27.6973 9.99632L21.1947 10.0024L17.9998 8.05878L14.6191 2L27.6973 9.99632Z"
+                                fill="#ED6F26"></path>
+                            <path d="M18.0178 23.9358V20.0427L14.6191 17.9941L14.621 30.0006L18.0178 23.9358Z"
+                                fill="#63B22F"></path>
+                            <path d="M21.1882 22.0059L8.39046 14.1563L5 8.0957L27.6847 21.998L21.1882 22.0059Z"
+                                fill="#1487C9"></path>
+                            <path d="M14.623 29.9985L18.0193 23.9336L21.1886 22.004L27.6851 21.9961L14.623 29.9985Z"
+                                fill="#017F36"></path>
+                            <path d="M5.00391 23.9011L14.648 17.9932L11.4057 16.0039L8.39063 17.8523L5.00391 23.9011Z"
+                                fill="#984995"></path>
+                        </svg>
+
+                        <svg class="payment-icon" focusable="false" aria-hidden="true" viewBox="0 0 32 32" width="32"
+                            height="32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <g clip-path="url(#clip0_10999_92006)">
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M8.62299 11V11.004C8.61903 11.004 7.37305 11 7.04079 12.1906C6.73621 13.2823 5.87787 16.2964 5.85414 16.3795H5.61681C5.61681 16.3795 4.73869 13.2981 4.43016 12.1866C4.0979 10.996 2.84796 11 2.84796 11H0V20.0581H2.84796V14.6786H2.96662H3.08529L4.7466 20.0581H6.72435L8.38566 14.6826H8.62299V20.0581H11.4709V11H8.62299Z"
+                                    fill="#4DB45E"></path>
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M19.0261 11C19.0261 11 18.1915 11.0752 17.7999 11.9493L15.7826 16.3795H15.5452V11H12.6973V20.0581H15.387C15.387 20.0581 16.2612 19.979 16.6528 19.1088L18.6305 14.6786H18.8678V20.0581H21.7158V11H19.0261Z"
+                                    fill="#4DB45E"></path>
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M22.9824 15.1133V20.0577H25.8304V17.1701H28.9157C30.2605 17.1701 31.3997 16.3118 31.823 15.1133H22.9824Z"
+                                    fill="#4DB45E"></path>
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M28.9148 11H22.582C22.8985 12.7246 24.1919 14.109 25.8651 14.5599C26.2448 14.6628 26.6443 14.7182 27.0557 14.7182H31.9368C31.9803 14.5125 32.0001 14.3028 32.0001 14.0853C32.0001 12.3805 30.6196 11 28.9148 11Z"
+                                    fill="url(#paint0_linear_10999_92006)"></path>
+                            </g>
+                            <defs>
+                                <linearGradient id="paint0_linear_10999_92006" x1="22.5828" y1="12.8591" x2="32.0001"
+                                    y2="12.8591" gradientUnits="userSpaceOnUse">
+                                    <stop offset="0.3" stop-color="#00B4E6"></stop>
+                                    <stop offset="1" stop-color="#088CCB"></stop>
+                                </linearGradient>
+                                <clipPath id="clip0_10999_92006">
+                                    <rect width="32" height="32" fill="white"></rect>
+                                </clipPath>
+                            </defs>
+                        </svg>
+                    </div>
+                </div>
+
+                <!-- Средняя колонка - Информация -->
+                <div class="footer-column">
+                    <h4>Информация</h4>
+                    <div class="footer-links">
+                        <a href="#">Политика конфиденциальности</a>
+                        <a href="#">Пользовательское соглашение</a>
+                        <a href="#">Правила площадки</a>
+                        <a href="#">Возврат товаров</a>
+                    </div>
+                </div>
+
+                <!-- Правая колонка - Социальные сети и поддержка -->
+                <div class="footer-column">
+                    <h4>Социальные сети</h4>
+                    <div class="social-links">
+                        <a href="#" class="social-link" target="_blank">
+                            <i class="fab fa-vk"></i>
+                        </a>
+                        <a href="#" class="social-link" target="_blank">
+                            <i class="fab fa-telegram-plane"></i>
+                        </a>
+                        <a href="#" class="social-link" target="_blank">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                    </div>
+
+                    <button class="support-btn" id="supportBtn">
+                        <i class="fas fa-headset"></i>
+                        Написать в поддержку
+                    </button>
+                </div>
+            </div>
+
+            <div class="copyright">
+                <p>AstralMarket — магазин цифровых товаров</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Мобильный нижний центр управления -->
+    <div class="mobile-bottom-nav" id="mobileBottomNav">
+        <a href="../seller-register.html" class="nav-item" title="Стать продавцом">
+            <i class="fas fa-plus"></i>
+            <span>Продавать</span>
+        </a>
+        <a href="#" class="nav-item" id="mobileBellIcon">
+            <i class="fas fa-bell"></i>
+            <span>Уведомления</span>
+        </a>
+        <a href="#" class="nav-item" id="mobileCartIcon">
+            <i class="fas fa-shopping-cart"></i>
+            <span>Корзина</span>
+        </a>
+        <a href="../login.html" class="nav-item">
+            <i class="fas fa-user-circle"></i>
+            <span>Профиль</span>
+        </a>
+    </div>
+
+    <!-- Контейнер для мобильных уведомлений -->
+    <div class="mobile-notification" id="mobileNotification">
+        <i class="fas" id="mobileNotificationIcon"></i>
+        <span id="mobileNotificationMessage"></span>
+        <button class="close-notification" id="closeMobileNotification">
+            <i class="fas fa-times"></i>
+        </button>
+    </div>
+
+    <!-- Модальное окно корзины для ПК -->
+    <div class="cart-overlay" id="cartOverlay"></div>
+    <div class="cart-modal" id="cartModal">
+        <div class="cart-header">
+            <h3><i class="fas fa-shopping-cart"></i> Корзина <span id="cartCount">0</span></h3>
+            <button class="close-cart" id="closeCartBtn"><i class="fas fa-times"></i></button>
+        </div>
+        <div class="cart-content" id="cartContent">
+            <!-- Товары будут загружаться через JavaScript -->
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>Итого:</span>
+                <span id="cartTotalPrice">0 ₽</span>
+            </div>
+            <button class="checkout-btn" id="checkoutBtn">Оформить заказ</button>
+        </div>
+    </div>
+
+    <!-- Мобильное полноэкранное меню корзины -->
+    <div class="mobile-cart-fullscreen" id="mobileCartFullscreen">
+        <div class="mobile-cart-header">
+            <h3><i class="fas fa-shopping-cart"></i> Корзина</h3>
+            <button class="close-mobile-cart" id="closeMobileCartBtn"><i class="fas fa-times"></i></button>
+        </div>
+        <div class="mobile-cart-content" id="mobileCartContent">
+            <!-- Товары будут загружаться через JavaScript -->
+        </div>
+        <div class="mobile-cart-footer">
+            <div class="mobile-cart-total">
+                <span>Итого:</span>
+                <span id="mobileCartTotalPrice">0 ₽</span>
+            </div>
+            <button class="mobile-checkout-btn" id="mobileCheckoutBtn">Оформить заказ</button>
+        </div>
+    </div>
+
+    <script src="../js/data.js"></script>
+    <script src="../js/category.js"></script>
+    <script src="../js/main.js"></script>
+</body>
+
+</html>

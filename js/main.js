@@ -118,6 +118,7 @@ function updateCartDisplay() {
     const cartTotal = document.getElementById('cartTotalPrice');
     const mobileCartTotal = document.getElementById('mobileCartTotalPrice');
 
+    // Обновляем ПК версию
     if (cartContent) {
         if (cartItems.length === 0) {
             cartContent.innerHTML = `
@@ -126,6 +127,7 @@ function updateCartDisplay() {
                     <p>Корзина пуста</p>
                 </div>
             `;
+            if (cartTotal) cartTotal.textContent = '0 ₽';
         } else {
             let html = '';
             let total = 0;
@@ -159,6 +161,7 @@ function updateCartDisplay() {
         }
     }
 
+    // Обновляем мобильную версию
     if (mobileCartContent) {
         if (cartItems.length === 0) {
             mobileCartContent.innerHTML = `
@@ -167,6 +170,7 @@ function updateCartDisplay() {
                     <p>Корзина пуста</p>
                 </div>
             `;
+            if (mobileCartTotal) mobileCartTotal.textContent = '0 ₽';
         } else {
             let html = '';
             let total = 0;
